@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project List | Srinivas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 224, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00ffe0;
+      text-align: center;
+    }
+
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-item {
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 255, 224, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .project-item:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 255, 224, 0.1);
+    }
+
+    .project-item h3 {
+      color: #ff4081;
+      margin-bottom: 1rem;
+    }
+
+    .project-item p {
+      color: #e0e0e0;
+      margin-bottom: 1.5rem;
+    }
+
+    .view-button, .run-button {
+      padding: 0.5rem 1.5rem;
+      background-color: #ff4081;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s;
+      margin-right: 1rem;
+    }
+
+    .view-button:hover, .run-button:hover {
+      background-color: #00ffe0;
+    }
+
+    a.back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      color: #00ffe0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a.back-link:hover {
+      color: #ff4081;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Project List</h1>
+    <div class="projects-list">
+      <!-- Project 1 -->
+      <div class="project-item">
+        <h3>ML Model for Image Classification</h3>
+        <p>A deep learning model for classifying images.</p>
+        <a class="view-button" href="C:\Users\mrsri\Desktop\one\py\8svm.py" target="_blank">See Code</a>
+
+        <a class="view-button" onclick="runSVM()">Run Code</a>
+
+      </div>
+    </div>
+
+    <a href="projects.html" class="back-link">&larr; Back to Projects</a>
+  </div>
+
+</body>
+<script>
+    function runSVM() {
+      fetch('http://127.0.0.1:5000/run_svm')
+        .then(response => response.json())
+        .then(data => {
+          if (data.output) {
+            alert("✅ Output:\n" + data.output);
+          } else {
+            alert("❌ Error:\n" + data.error);
+          }
+        })
+        .catch(error => {
+          alert("⚠️ Could not connect to Flask server.");
+          console.error(error);
+        });
+    }
+  </script>
+  
+</html>

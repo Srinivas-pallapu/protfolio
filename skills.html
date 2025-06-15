@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Srinivas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 224, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00ffe0;
+      text-align: center;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .skill {
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 255, 224, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 255, 224, 0.1);
+    }
+
+    .skill h3 {
+      color: #ff4081;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill p {
+      color: #e0e0e0;
+    }
+
+    .design-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .design-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 224, 0.2);
+      overflow: hidden;
+      transition: transform 0.3s;
+      width: 100%;
+    }
+
+    .design-card img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+    }
+
+    .design-card:hover {
+      transform: scale(1.02);
+    }
+
+    .design-card p {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    a.back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      color: #00ffe0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a.back-link:hover {
+      color: #ff4081;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Skills</h1>
+    <div class="skills">
+      <div class="skill">
+        <h3>Web Development</h3>
+        <p>Experienced in HTML, CSS, JavaScript, and frameworks like React & Kivy.</p>
+      </div>
+
+      <div class="skill">
+        <h3>Design & UI/UX</h3>
+        <p>Designing posters and UIs using GIMP, Canva, and Lightroom.</p>
+      </div>
+
+      <div class="skill">
+        <h3>AI & Machine Learning</h3>
+        <p>Building smart applications using Python and ML libraries like TensorFlow.</p>
+      </div>
+
+      <div class="skill">
+        <h3>Tools & Platforms</h3>
+        <p>VS Code, GitHub, Firebase, Jupyter Notebook, Android Studio, etc.</p>
+      </div>
+    </div>
+
+    <a href="home.html" class="back-link">&larr; Back to Home</a>
+  </div>
+</body>
+</html>
